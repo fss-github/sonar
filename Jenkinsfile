@@ -3,11 +3,11 @@
 node("master"){
     //checkout
     checkout([$class: 'GitSCM',
-             branches: [[name: '*/master']], 
+             branches: [[name: '*/main']], 
              doGenerateSubmoduleConfigurations: false, 
              extensions: [], submoduleCfg: [], 
              userRemoteConfigs: [[credentialsId: 'dc85759a-1cc0-461e-8ba9-383e3169e5f3', 
-             url: 'http://gitlab.kgc.cn/kgc/kgcweb.git']]])
+             url: 'https://github.com/fss-github/sonar.git']]])
     //Build
     sh "mvn ${buildShell}"
     
